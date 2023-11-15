@@ -25,6 +25,12 @@ pipeline {
                 sh 'docker push valaxy/nodeapp:$BUILD_NUMBER'
             }
         }
+        post {
+        always {
+            sh 'docker logout'
+        }
+    }
+
 }
 
 }
